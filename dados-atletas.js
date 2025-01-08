@@ -48,6 +48,7 @@ class Atleta {
 }
 
 
+
 const atleta = new Atleta("Cesar Abascal",
     30, 80, 1.70,
     [10, 9.34, 8.42, 10, 7.88]);
@@ -57,8 +58,19 @@ atleta.obtemIdadeAtleta();
 atleta.obtemPesoAtleta();
 atleta.obtemAlturaAtleta();
 atleta.obtemNotasAtleta();
-atleta.calculaCategoria();
+console.log("Categoria: " + atleta.calculaCategoria());
 atleta.calculaIMC();
+
+
+
+function sortfunction(a, b){
+  return (a - b);
+}
+
+let notasValidas = atleta.notas.sort(sortfunction).slice(1,4);
+   console.log(`Notas Válidas: ${notasValidas}`);
+   let mediaValida = notasValidas.reduce((soma, nota) => soma + nota, 0) / notasValidas.length;
+   console.log(`Média Válida: ${mediaValida}`);
 
 /* Exemplo de saída:
 
